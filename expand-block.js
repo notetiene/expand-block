@@ -12,13 +12,13 @@
  * `.expand-inner`) that was collapsed.
  * @param {int} height
  */
-HTMLElement.prototype._height = function(height) {
+function _height(height) {
   if(height === 'auto') {
     this.style.height = 'auto';
   } else {
     this.style.height = height + 'px';
   }
-};
+}
 
 /**
  * Link for subclasses shadowing.
@@ -31,7 +31,7 @@ HTMLElement.prototype.super = HTMLElement.prototype;
  * @returns {Promise} A {@link Promise} that resolves when the
  * transition ended.
  */
-HTMLElement.prototype._expandPromise = function() {
+function _expandPromise() {
   var that = this;
   return new Promise(function(resolve) {
     function handler() {
@@ -42,28 +42,28 @@ HTMLElement.prototype._expandPromise = function() {
     that.addEventListener('transitionend', handler, false);
     that.super.expand.call(that, false);
   });
-};
+}
 
 /**
  * Expands the parents of a container according to their inner content
  * (using `.expand-inner`) that was collapsed.
  */
-HTMLElement.prototype._expandParents = function() {
+function _expandParents() {
   var that = this;
   var parents = document.getElementsByClassName('expand-block');
   var parent;
   var i;
   var queue;
 
-  queue = that._expandPromise();
+  queue = _expandPromise.call(that);
 
   for(i = parents.length; i--;) {
     parent = parents[i];
     if(parent.contains(that) && parent !== that) {
-      queue = queue.then(parent._expandPromise.bind(parent));
+      queue = queue.then(_expandPromise.bind(parent));
     }
   }
-};
+}
 
 /**
  * Expands a container according to its inner content (using
@@ -72,16 +72,16 @@ HTMLElement.prototype._expandParents = function() {
  * containing the `expand-block` class.
  */
 HTMLElement.prototype.expand = function(expandParents) {
-
-  var inner = this.getElementsByClassName('expand-inner')[0];
+  var that = this;
+  var inner = that.getElementsByClassName('expand-inner')[0];
 
   if(inner) {
     var height = inner.offsetHeight;
-    this._height(height);
+    _height.call(that, height);
   }
 
   if(expandParents === true) {
-    this._expandParents();
+    _expandParents().call(that);
   }
 };
 
@@ -91,7 +91,7 @@ HTMLElement.prototype.expand = function(expandParents) {
  * @returns {Promise} A {@link Promise} that revolves when the collapsing
  * transition ended in the current element.
  */
-HTMLElement.prototype._promiseCollapse = function() {
+function _promiseCollapse() {
   var that = this;
 
   return new Promise(function(resolve) {
@@ -102,7 +102,7 @@ HTMLElement.prototype._promiseCollapse = function() {
     that.addEventListener('transitionend', handler, false);
     that.collapse();
   });
-};
+}
 
 /**
  * Sets the element Height to 0 (collapse the element).
@@ -115,10 +115,10 @@ HTMLElement.prototype.collapse = function(retPromise) {
   var that = this;
 
   if(retPromise === true) {
-    return that._promiseCollapse.call(that);
+    return _promiseCollapse.call(that);
   }
 
-  this._height(0);
+  _height.call(this, 0);
 };
 
 /**
