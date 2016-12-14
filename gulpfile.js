@@ -2,10 +2,11 @@
 
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
+var watch = require('gulp-watch');
 var clean = require('gulp-clean');
 
 var build = './dist/';
-var src = './src/js/components.js';
+var src = './src/js/expand-block.js';
 
 
 gulp.task('clean', function() {
@@ -22,7 +23,7 @@ gulp.task('js', ['clean'], function() {
 
 
 gulp.task('watch', function() {
-    return gulp.watch(src, ['default']);
+    return watch(src, ['default']);
 });
 
 gulp.task('default', ['js']);
