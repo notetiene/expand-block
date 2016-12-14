@@ -1,0 +1,35 @@
+{
+    "name": "expand-block",
+    "version": "1.0.0",
+    "description": "A small library that adds expand/collapse functionality on HTMLElement",
+    "main": "dist/expand-block.js",
+    "dependencies": {
+        "gulp-clean": "^0.3.2",
+        "gulp-uglify": "^2.0.0",
+        "gulp": "^3.9.1"
+    },
+    "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-clean": "^0.3.2",
+        "gulp-uglify": "^2.0.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/notetiene/expand-block.git"
+    },
+    "keywords": [
+        "expand",
+        "collapse",
+        "JavaScript",
+        "Vanilla"
+    ],
+    "author": "Etienne Prud’homme",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/notetiene/expand-block/issues"
+    },
+    "homepage": "https://github.com/notetiene/expand-block#readme"
+}
