@@ -9,12 +9,10 @@ var sourcemaps = require('gulp-sourcemaps');
 var build = './dist/';
 var src = './src/js/expand-block.js';
 
-
 gulp.task('clean', function() {
     return gulp.src(build, {read: false})
         .pipe(clean());
 });
-
 
 gulp.task('js', ['clean'], function() {
     return gulp.src(src)
@@ -23,7 +21,6 @@ gulp.task('js', ['clean'], function() {
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(build));
 });
-
 
 gulp.task('watch', function() {
     return watch(src, ['default']);
