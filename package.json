@@ -13,7 +13,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "generate-release"
+    "release": "alias git='LANG=en_US git'; generate-release"
   },
   "repository": {
     "type": "git",
