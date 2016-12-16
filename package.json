@@ -1,6 +1,6 @@
 {
   "name": "expand-block",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A small library that adds expand/collapse functionality on HTMLElement",
   "main": "dist/expand-block.js",
   "devDependencies": {
