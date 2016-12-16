@@ -1,2 +1,4 @@
 node_modules
+.tern-portnpm-debug.log
 .tern-port
+npm-debug.log
