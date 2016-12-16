@@ -3,7 +3,7 @@
    * library adds expand/collapse functionality on HTMLElement
    * @author Etienne Prud’homme
    * @name expand-block.js<expand-block>
-   * @version 1.0.2
+   * @version 1.0.3
    * @license MIT
    * Created: 2016-12-14
    */
