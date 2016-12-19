@@ -2,6 +2,25 @@
 A small library that adds expand/collapse functionality on the
 `HTMLElement` object prototype.
 
+## Building
+To build this library, open the terminal and execute the following
+commands:
+
+> npm install
+
+On success:
+
+> gulp
+
+If everything went correctly, you should get 4 files:
+
+1. expand-block.min.js: The minified file to use.
+2. expand-block.min.js.map: The sourcemap file used for debugging
+   `expand-block.min.js` (if using that file).
+3. expand-block.js: The file before it was minified.
+4. expand-block.js.map: The sourcemap file for debugging
+   `expand-block.js`.
+
 ## Installation
 
 Simply load the `expand-block.js` file. This library automatically
