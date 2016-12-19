@@ -14,11 +14,11 @@ On success:
 
 If everything went correctly, you should get 4 files:
 
-1. expand-block.min.js: The minified file to use.
-2. expand-block.min.js.map: The sourcemap file used for debugging
+1. `expand-block.min.js`: The minified file to use.
+2. `expand-block.min.js.map`: The [sourcemap](https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/) file used for debugging
    `expand-block.min.js` (if using that file).
-3. expand-block.js: The file before it was minified.
-4. expand-block.js.map: The sourcemap file for debugging
+3. `expand-block.js`: The file before it was minified.
+4. `expand-block.js.map`: The sourcemap file for debugging
    `expand-block.js`.
 
 ## Installation
