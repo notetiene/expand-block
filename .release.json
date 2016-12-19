@@ -5,9 +5,14 @@
       "skip_git_push": false,
       "release_message": true,
       "remote": "origin",
-      "pre_commit_commands": [],
+      "pre_commit_commands": ["gulp"],
       "post_commit_commands": [],
       "post_complete_commands": [],
-      "files_to_commit": [],
+      "files_to_commit": [
+          "./dist/expand-block.js",
+          "./dist/expand-block.js.map",
+          "./dist/expand-block.min.js",
+          "./dist/expand-block.min.js.map"
+      ],
       "files_to_version": ["README.md", "bower.json", "src/js/expand-block.js"]
   }
